@@ -1,0 +1,711 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  
+  .container {
+    max-width: 1050px;
+    width: 90%;
+    margin: auto;
+    z-index: 2;
+  }
+  
+  .navbar {
+    width: 100%;
+    box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+    color:white;
+    background-color: black;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+  }
+  
+  .navbar .menu-items {
+    display: flex;
+  }
+  
+  .navbar .nav-container li {
+    list-style: none;
+    
+  }
+  
+  .navbar .nav-container a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.7rem;
+  }
+  
+  .navbar .nav-container a:hover{
+     
+      color: rgb(58, 225, 58);
+  }
+  
+  .nav-container {
+    display: block;
+    position: relative;
+    height: 60px;
+  }
+  
+  .nav-container .checkbox {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 32px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .nav-container .hamburger-lines {
+    display: block;
+    height: 26px;
+    width: 32px;
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .nav-container .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: white;
+  }
+  
+  .nav-container .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .nav-container .hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .nav-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .navbar .menu-items {
+    padding-top: 50px;
+    height: 650px;
+    width: 50%;
+    transform: translate(-100%);
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+    padding-left: 50px;
+    transition: transform 0.5s ease-in-out;
+    text-align: end;
+    background-color: black;
+  }
+  
+  .navbar .menu-items li {
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 1.2rem;
+    color: #0e2431;
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg);
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg);
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .logo{
+    display: none;
+  }
+.violet {
+    background-color: rgb(173, 36, 173);
+    color: white;
+    text-align:center;
+    padding: 20px;
+}
+.blue {
+    background-color:rgb(57, 57, 239);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow:hidden;
+    z-index: -2;
+}
+.balls{
+    background-color: rgb(89, 173, 89);
+    border-radius: 100%;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: -2;
+}
+.balls-two {
+    background-color: rgb(89, 173, 89);
+    border-radius: 100%;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    margin: 170px 900px 900px 800px;
+    z-index: -1;
+}
+.balls-three {
+    background-color: rgb(89, 173, 89);
+    border-radius: 100%;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin: 30px 300px 200px 200px;
+    z-index: -1;
+}
+.balls-four {
+    background-color: rgb(89, 173, 89);
+    border-radius: 100%;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    margin: 5px 70px 1500px 1200px;
+    z-index: -1;
+}
+.word {
+    z-index: 2;
+}
+
+/* Style of text */
+h1 {
+    font-size: xx-large;
+    margin:25px;
+    font-weight: bolder;
+}
+h3 {
+    font-size: larger;
+    margin-top:-30px;
+    margin-bottom: -5px;
+    padding-right: 15px;
+    font-weight: bold;
+}
+p {
+    margin:25px;
+    font-size: smaller;
+}
+.center{
+    text-align: center;
+}
+/* Sttyle of button */
+
+.button {
+    background-color: black;
+    color:white;
+    padding: 15px;
+    border-radius: 40px;
+    border:none;
+    width: 80%;
+    margin:20px;
+}
+.button:hover {
+    cursor: pointer;
+}
+.button-green {
+    background-color: rgb(58, 225, 58);
+    color: rgb(87, 87, 241);
+    padding: 15px;
+    border-radius: 40px;
+    border:none;
+    width: 200px;
+    z-index: 2;
+}
+.space {
+    background-color: white;
+    padding:2px;
+    margin:3px;
+    width: 30px;
+    text-align: end;
+    align-self: flex-end;
+}
+.last {
+   margin-top: 250px;
+}
+.item {
+    display: block;
+}
+.navigator {
+    display: none;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    background-color: black;
+    gap: 30px;
+    padding:30px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.social {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px;
+}
+a:hover{
+  color: rgb(58, 225, 58);
+}
+
+
+
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 20px 30px;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -100px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+                     /* ********PAGE PREMIUM********* */
+
+  .main-premium {
+    color: white;
+    background-color: rgb(12, 115, 211);
+    margin:0;
+    padding:20px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+  }
+  .button-white {
+    background-color: transparent;
+    color:white;
+    border: solid 2px white;
+    padding: 10px;
+    border-radius: 40px;
+    width: 80%;
+    margin:20px;
+}
+.button-white > a:hover {
+  color: rgb(58, 225, 58);
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+.main-premium2 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.note-music {
+  background-color: gainsboro;
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.balls-img {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items:center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin:20px;
+  
+}
+.container-balls {
+  display: flex;
+  flex-direction: column;
+  gap:60px;
+  margin:20px;
+}
+.main-premium-3 {
+  background-color: gainsboro;
+}
+.cards {
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+  margin:30px;
+}
+.button-blue {
+  background-color: blue;
+  color: white;
+  padding:10px;
+  border-radius: 10px;
+  border:none;
+  margin:5px;
+}
+.button-empty-blue {
+  background-color: transparent;
+  color: blue;
+  padding:10px;
+  border-radius: 10px;
+  border: solid 2px blue;
+}
+.cards > a {
+  color:black;
+}
+.cards > a:hover {
+  color: rgb(58, 225, 58);
+}
+.blue-assistence {
+
+  background-color: rgb(69, 69, 234);
+  color: white;
+  padding:8px;
+}
+.search {
+  text-align: center;
+  width: 90%;
+  padding:10px;
+  margin:5px;
+}
+.list-assistence {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+.list-assistence >li {
+  margin:10px;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  border:solid .5px gray;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+.list-accordion > li > a {
+  color: rgb(49, 128, 49);
+}
+.list-accordion > li > a:hover {
+  text-decoration: underline;
+}
+.list-accordion > li{
+  padding: 5px;
+}
+.comunity {
+  text-align: center;
+  padding:30px 10px;
+
+}
+.comunity > button > a:hover {
+
+  color: black;
+}
+.logo-register {
+
+  text-align: center;
+  margin: 30px;
+}
+.facebook {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 50px;;
+  width: 400px;
+  justify-content: center;
+  padding: 1px;
+  background-color: white;
+  border:solid 2px blue;
+}
+.google{
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 50px;;
+  width: 400px;
+  justify-content: center;
+  background-color: white;
+  border:solid 2px black;
+
+}
+.button-social {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+ align-items: center;
+  
+
+}
+.span {
+  text-align: center;
+  border-bottom: solid 2px gainsboro;
+  height: 2px;
+  margin:40px;
+  color: gray;
+}
+.span::after{
+  content: 'oppure';
+}
+.title-form {
+  text-align: center;
+  padding:20px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.input-form {
+  padding: 15px;
+  width: 400px;
+}
+label {
+  padding: 20px;
+}
+b {
+  font-weight: bold;
+  
+}
+.birthday {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.input-birthday {
+width: 110px;
+margin: 3px;
+padding: 15px;
+}
+.red-border {
+  border: solid 2px red;
+}
+
+
+
+.accord-panell {
+  display: none;
+}
+.tab-panel {
+  display: none;
+}
+.tab-panel:active {
+  display: block;
+}
+
+
+
+
+
+  @media only screen and (min-width: 800px) {
+
+    .nav-container {
+        display: none;
+    }
+   .navigator {
+       display: block;
+       background-color: black;
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       padding: 15px;
+
+   }
+   .nav-big {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+  }
+  a {
+      color:white;
+      text-decoration: none;
+  }
+
+  a:hover{
+    color: rgb(58, 225, 58);
+  }
+  .violet {
+     display:flex;
+     flex-direction: row;
+
+  }
+  .button {
+      width: 70%;
+  }
+  .img-spray{
+      width: 450px;
+      padding: 50px -8px 50px 50px;
+
+  }
+  .title{
+    font-size: 60px;
+}
+p {
+    margin:25px;
+    font-size: medium;
+}
+footer {
+    display: flex;
+    flex-direction: row;
+    
+}
+.container-balls {
+  display: flex;
+  flex-direction: column;
+  gap:80px;
+  margin:20px;
+  flex-flow: row;
+  padding: 30px;
+}
+.note-music {
+  margin:30px;
+}
+.cards-container {
+  display: flex;
+  flex-direction: row;
+}
+.list-assistence {
+ text-align: center;
+}
+.container-balls {
+  overflow: hidden;
+}
+
+
+}
